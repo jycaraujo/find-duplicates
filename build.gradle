@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    implementation 'org.apache.poi:poi:5.2.3'
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
+    implementation 'org.apache.commons:commons-collections4:4.4'  // required by poi-ooxml
+    implementation 'org.apache.commons:commons-compress:1.26.0'     // required by poi-ooxml
+    implementation 'commons-codec:commons-codec:1.15'             // required by poi-ooxml
+
+    implementation 'org.apache.logging.log4j:log4j-core:2.23.1'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
